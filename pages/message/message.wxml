@@ -1,0 +1,118 @@
+<view class="message">
+  <swiper class="sliders">
+    <swiper-item wx:for="{{ banner }}" wx:key="key">
+      <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item }}"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="infos">
+    <view class="basic_infos">
+      <text class="name">{{ petName }}</text>
+      <text class="sex">{{ sex }}</text>
+      <text class="price">￥{{ price }}</text>
+    </view>
+    <view class="detail_infos">
+      <view class="birth">
+        <text class="title">生日：</text>
+        <text class="detail">{{ birth }}</text>
+      </view>
+      <view class="post">
+        <text class="title">发布：</text>
+        <text class="detail">湖南长沙</text>
+      </view>
+      <view class="jueyu">
+        <text class="title">绝育：</text>
+        <text class="detail">{{Sterilization}}</text>
+      </view>
+      <view class="intros">
+        <text class="title">简介：</text>
+        <text class="detail">{{infos}}</text>
+      </view>
+      <view class="transport">
+        <text class="title">配送：</text>
+        <image src="../../assets/transport_self.png"></image>
+        <text>自提0元</text>
+        <image src="../../assets/transport_car.png"></image>
+        <text>汽运200元</text>
+        <image src="../../assets/transport_plane.png"></image>
+        <text>空运600元</text>
+      </view>
+      <view class="service">
+        <text class="title">服务：</text>
+        <icon type="success" size="20" color="orange"></icon>
+        <text style="color:orange">100%实拍</text>
+        <icon type="success" size="20" color="orange"></icon>
+        <text style="color:orange">平台认证</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="posterInfos">
+    <view class="poster_Icon">
+      <image src="{{ poster.avatarUrl }}"></image>
+    </view>
+    <view class="detailInfos">
+      <view class="name">
+        <text>{{ poster.nickName }}</text>
+      </view>
+      <view class="adress">
+        <text>{{ area }}</text>
+      </view>
+    </view>
+  </view>
+
+  <navigator url="/pages/commentList/commentList?posterID={{ openid }}" class="content">
+    <view class="title">
+      <text>用户评价</text>
+      <image src="../../assets/arrow_right.png"></image>
+    </view>
+    <view class="item" wx:for-items="{{ comment }}" wx:key="*this">
+      <image class="icon" src="{{ item.avatarUrl }}"></image>
+      <view class="item_infos">
+        <view class="name"><text>{{ item.nickName }}</text></view>
+        <view class="contents"><text>{{ item.comment }}</text></view>
+        <view class="heartScore">
+          <view class="test" wx:for="{{ item.heartScore }}" wx:key="*this">
+            <image src="/assets/heart_full.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+
+  <view class="recommend">
+    <view class="title">
+      <text>为您推荐</text>
+      <image src="../../assets/arrow_right.png"></image>
+    </view>
+
+    <navigator url="/pages/message/message?id={{item.id}}" class="item" wx:for-items="{{ recommend }}" wx:key="*this" data-id='{{ item.id }}' bindtap="test">
+      <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="Infos">
+        <view class="pet_infos">
+          <text class="name">{{ item.petName }}</text>
+          <text class="price">￥{{ item.price }}</text>
+        </view>
+        <view class="poster_infos">
+          <text class="name">{{ item.nickName }}</text>
+          <text class="address">{{ item.area }}</text>
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+
+  <view class="goodsaction">
+    <view class="logo" bindtap="toHome">
+      <image src="../../assets/home.png" bindtap="toHome"></image>
+      <text>主页</text>
+    </view>
+    <view class="logo" bindtap="toCollect">
+      <image src="{{ isCollect ? '../../assets/iscollect.png' : '../../assets/collect.png' }}"></image>
+      <text>收藏</text>
+    </view>
+    <view class="action_btn">
+      <button class="btn_right" bindtap="BuyNow">立即购买</button>
+    </view>
+  </view>
+</view>

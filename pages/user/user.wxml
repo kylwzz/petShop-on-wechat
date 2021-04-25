@@ -1,0 +1,63 @@
+<!--pages/user/user.wxml-->
+<view class="userInfos">
+  <view class="user_Icon">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="user_NickName">
+    <open-data type="userNickName"></open-data>
+  </view>
+</view>
+
+<view class="grids">
+  <navigator class="item" url="/pages/user/orderList/orderList?idx=0">
+    <image mode="aspectFill" src="../../assets/user_wallet.png"></image>
+    <text>待付款</text>
+  </navigator>
+  <navigator class="item" url="/pages/user/orderList/orderList?idx=1">
+    <image mode="aspectFill" src="../../assets/user_package.png"></image>
+    <text>待发货</text>
+  </navigator>
+  <navigator class="item" url="/pages/user/orderList/orderList?idx=2">
+    <image mode="aspectFill" src="../../assets/user_car.png"></image>
+    <text>已发货</text>
+  </navigator>
+  <navigator class="item" url="/pages/user/orderList/orderList?idx=3">
+    <image mode="aspectFill" src="../../assets/user_content.png"></image>
+    <text>待评价</text>
+  </navigator>
+  <navigator class="item" url="/pages/user/orderList/orderList?idx=4">
+    <image mode="aspectFill" src="../../assets/user_payback.png"></image>
+    <text>退款</text>
+  </navigator>
+</view>
+
+<view class="choice">
+  <navigator url="/pages/user/poster/poster" class="item">
+    <text>我是卖家</text>
+    <image mode="aspectFill" src="../../assets/arrow_right.png"></image>
+  </navigator>
+  <navigator url="/pages/user/address/address" class="item">
+    <text>收货地址</text>
+    <image mode="aspectFill" src="../../assets/arrow_right.png"></image>
+  </navigator>
+  <navigator url="/pages/user/collect/collect" class="item">
+    <text>我的收藏</text>
+    <image mode="aspectFill" src="../../assets/arrow_right.png"></image>
+  </navigator>
+  <view class="item">
+    <text>用户帮助</text>
+    <image mode="aspectFill" src="../../assets/arrow_right.png"></image>
+  </view>
+  <view class="item">
+    <text>客服热线</text>
+    <image mode="aspectFill" src="../../assets/arrow_right.png"></image>
+  </view>
+  <view class="item">
+    <text>意见反馈</text>
+    <image mode="aspectFill" src="../../assets/arrow_right.png"></image>
+  </view>
+  <view class="item">
+    <text>个人设置</text>
+    <image mode="aspectFill" src="../../assets/arrow_right.png"></image>
+  </view>
+</view>

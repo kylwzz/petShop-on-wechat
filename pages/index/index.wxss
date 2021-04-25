@@ -1,0 +1,251 @@
+
+.login {
+  margin-top: 90rpx;
+  margin-bottom: 90rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .headIcon {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+}
+
+.content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+}
+
+.bottom {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+}
+
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EFEFF4;
+  border-top: 1rpx solid #D7D6DC;
+  border-bottom: 1rpx solid #D7D6DC;
+  
+ }
+ .weui-icon-search {
+  margin-right: 8px;
+  font-size: inherit;
+ }
+ .weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+ }
+ .weui-search-bar__text {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+ }
+ .weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+  flex: auto;
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+ }
+ .weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+ }
+ .weui-search-bar__input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+ }
+ .weui-icon-clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px 8px;
+  font-size: 0;
+ }
+ .weui-search-bar__label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-radius: 3px;
+  text-align: center;
+  color: #9B9B9B;
+  background: #FFFFFF;
+  line-height: 28px;
+ }
+ .weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color: #09BB07;
+  white-space: nowrap;
+  font-size: 30rpx;
+ }
+
+.sliders{
+  height: 280rpx;
+  margin: 5rpx;
+}
+.sliders image{
+  width: 100%;
+  height: 100%;
+}
+.entrance{
+  display: flex;
+  background-color: #fff;
+  font-size: 28rpx;
+  border-top: 5rpx solid #eee;
+}
+.entrance .item{
+  display: flex;
+  flex-direction: column;
+  width: 33.3333333%;
+  height: 150 rpx;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #eee;
+}
+.entrance .item image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.discount{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 320rpx;
+  background-color: #fff;
+  border-top: 5rpx solid #eee;
+}
+
+.discount .title text{
+  font-size: 18px;
+}
+.discount .grid{
+  display: flex;
+}
+/* .discount .item :first{
+  border-left: -8rpx solid white;
+} */
+.discount .item{
+  width: auto;
+  /* margin-left: 10rpx; */
+  /* border: 8rpx solid white; */
+  padding: 8rpx;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.discount .item image{
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
+}
+.discount .item .infos{
+  width: 200rpx;
+  height: 40rpx;
+}
+.discount .item .infos .type{
+  display: inline-block;
+  width: 100rpx;
+  height: 40rpx;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  vertical-align:top
+}
+.discount .item .infos .price{
+  display: inline-block;
+  text-align: right;
+  width: 100rpx;
+  height: 40rpx;
+  color: red;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* .discount .item text{
+  display: block;
+  width: 200rpx;
+  height: 200rpx
+} */
+
+.newest{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 320rpx;
+  background-color: #fff;
+  border-top: 10rpx solid #eee;
+}
+.newest .title text{
+  font-size: 18px;
+}
+.newest .grid{
+  display: flex;
+}
+/* .discount .item :first{
+  border-left: -8rpx solid white;
+} */
+.newest .item{
+  width: auto;
+  /* margin-left: 10rpx; */
+  /* border: 8rpx solid white; */
+  padding: 8rpx;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.newest .item image{
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
+}
+.newest .item .infos{
+  width: 20newest0rpx;
+  height: 40rpx;
+}
+.newest .item .infos .type{
+  display: inline-block;
+  width: 100rpx;
+  height: 40rpx;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  vertical-align:top
+}
+.newest .item .infos .price{
+  display: inline-block;
+  text-align: right;
+  width: 100rpx;
+  height: 40rpx;
+  color: red;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}

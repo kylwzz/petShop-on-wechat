@@ -1,0 +1,37 @@
+<!--pages/user/collect/collect.wxml-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+    bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!-- 宠物 -->
+<view hidden="{{currentTab!==0}}" class="pet" wx:key="index">
+  <view class="grids">
+    <navigator url="/pages/message/message?id={{ item.shopID }}" class="item" wx:for="{{ pets }}" wx:key="index" bindlongtap='deleteCollection' data-index="{{ item.id }}">
+      <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+        <view class="name"><text>{{ item.name }}</text></view>
+        <view class="details">
+          <text class="price">￥{{ item.price }}</text>
+          <text class="area">{{ item.area }}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<!-- 商品 -->
+<view hidden="{{currentTab!==1}}" class="supply">
+  <view class="grids">
+    <navigator url="/pages/mallmessage/mallmessage?id={{ item.shopID }}" class="item" wx:for="{{ supplies }}" wx:key="index">
+      <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+        <view class="name"><text>{{ item.name }}</text></view>
+        <view class="details">
+          <text class="price">￥{{ item.price }}</text>
+          <text class="area">{{ item.area }}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

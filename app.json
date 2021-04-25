@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mall/mall",
+    "pages/user/user",
+    "pages/shoppingcar/shoppingcar",
+    "pages/message/message",
+    "pages/mallmessage/mallmessage",
+    "pages/user/poster/poster",
+    "pages/user/poster/release/release",
+    "pages/petlist/petlist",
+    "pages/user/address/addAddress/addAddress",
+    "pages/user/poster/releasesupplies/releasesupplies",
+    "pages/user/poster/mypost/mypost",
+    "pages/user/collect/collect",
+    "pages/supplyList/supplyList",
+    "pages/user/orderList/orderList",
+    "pages/order/order",
+    "pages/orderFromCart/orderFromCart",
+    "pages/orderdetail/ordertail",
+    "pages/comment/comment",
+    "pages/commentList/commentList",
+    "pages/order/chooseAddress/chooseAddress",
+    "pages/user/poster/orderHandler/orderHandler",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#bcc0c9",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "猫猫狗狗",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/home-active.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "商城",
+        "iconPath": "assets/mall.png",
+        "selectedIconPath": "assets/mall-active.png"
+      },
+      {
+        "pagePath": "pages/shoppingcar/shoppingcar",
+        "text": "购物车",
+        "iconPath": "assets/shoppingcar.png",
+        "selectedIconPath": "assets/shoppingcar-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "assets/profile.png",
+        "selectedIconPath": "assets/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

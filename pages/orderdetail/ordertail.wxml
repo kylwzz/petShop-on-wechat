@@ -1,0 +1,67 @@
+<!--pages/orderdetail/ordertail.wxml-->
+<view class="address">
+  <view class="title">
+      <text>收货人</text>
+      <text>收货地址</text>
+    </view>
+    <view class="user_infos">
+      <text>{{ order.buyerName }} {{order.buyerPhone}}</text>
+      <text>{{ order.buyerArea }}</text>
+    </view>
+</view>
+
+<view class="divLine">
+    <!-- 分割线 -->
+</view>
+
+<view class="shop" hidden="{{ order.state == 3 }}">
+  <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ order.cover }}"></image>
+  <view class="infos">
+    <text class="name">{{ order.name }}</text>
+    <text class="price">￥{{ order.price}}（含运费{{ order.transportPrice }}元）</text>
+  </view>
+</view>
+
+<view class="shop" wx:if="{{ order.state == 3 }}">
+  <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ order.cover }}"></image>
+  <view class="infos">
+    <text class="name">{{ order.name }}</text>
+    <text class="price">￥{{ order.price}}（含运费{{ order.transportPrice }}元）</text>
+    <text class="refund" bindtap="refund">退款</text>
+  </view>
+</view>
+
+<view class="poster">
+  <view class="title">
+      <text>卖家名称</text>
+      <text>卖家地址</text>
+  </view>
+
+  <view class="poster_infos">
+    <text>{{ order.poster }}</text>
+    <text>{{ order.posterAera }}</text>
+  </view>
+</view>
+
+<view class="transport">
+  <view class="title">
+    <text>配送方式  </text>
+  </view>
+  <text class="choice">{{ order.transportWay }}</text>
+</view>
+
+<view class="orderInfos">
+  <view class="title">
+    <text>订 单 号 </text>
+    <text>状 态</text>
+  </view>
+  <view class="infos">
+    <text class="number">{{ order.orderCode }}</text>
+    <text class="number">{{ state }}</text>
+  </view>
+</view>
+
+<view class="footer">
+  <button class="btn" bindtap="goPay" hidden="{{ isShowPay }}">马上支付</button>
+  <button class="btn" bindtap="goComment" hidden="{{ order.state != 3 }}">前往评价</button>
+</view>

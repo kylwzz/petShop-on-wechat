@@ -1,0 +1,94 @@
+<view class="message">
+  <swiper class="sliders">
+    <swiper-item wx:for="{{ banner }}" wx:key="key">
+      <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item }}"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="mall_message">
+    <text class="name">{{ supply.supplyName }}</text>
+    <text class="intro">{{ supply.infos }}</text>
+    <text class="price">￥{{ supply.price }}</text>
+  </view>
+</view>
+
+<view class="infos">
+  <view class="detail_infos">
+    <view class="transport">
+      <text class="title">配送：</text>
+      <text class="detail">{{ supply.transport }}</text>
+    </view>
+    <view class="type">
+      <text class="title">分类：</text>
+      <text class="detail">{{ supply.classify }}</text>
+    </view>
+    <view class="brand">
+      <text class="title">品牌：</text>
+      <text class="detail">{{ supply.brand }}</text>
+    </view>
+    <view class="stage">
+      <text class="title">阶段：</text>
+      <text class="detail">{{ supply.stage }}</text>
+    </view>
+    <view class="fit">
+      <text class="title">品种：</text>
+      <text class="detail">{{ supply.advice }}</text>
+    </view>
+    <view class="weight">
+      <text class="title">毛重：</text>
+      <text class="detail">{{ supply.weight }}</text>
+    </view>
+    <view class="warranty">
+      <text class="title">保质：</text>
+      <text class="detail">{{ supply.expiration }}</text>
+    </view>
+  </view>
+</view>
+
+<view class="posterInfos">
+  <view class="poster_Icon">
+    <image src="{{ poster.avatarUrl }}"></image>
+  </view>
+  <view class="detailInfos">
+    <view class="name">
+      <text>{{ poster.nickName }}</text>
+    </view>
+    <view class="adress">
+      <text>{{ supply.area }}</text>
+    </view>
+  </view>
+</view>
+
+<navigator url="/pages/commentList/commentList?posterID={{ openid }}" class="content">
+    <view class="title">
+      <text>用户评价</text>
+      <image src="../../assets/arrow_right.png"></image>
+    </view>
+    <view class="item" wx:for-items="{{ comment }}" wx:key="*this">
+      <image class="icon" src="{{ item.avatarUrl }}"></image>
+      <view class="item_infos">
+        <view class="name"><text>{{ item.nickName }}</text></view>
+        <view class="contents"><text>{{ item.comment }}</text></view>
+        <view class="heartScore">
+          <view class="test" wx:for="{{ item.heartScore }}" wx:key="*this">
+            <image src="/assets/heart_full.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+
+<view class="goodsaction">
+  <view class="logo" bindtap="toHome">
+    <image src="../../assets/home.png" bindtap="toHome"></image>
+    <text>主 页</text>
+  </view>
+  <view class="logo" bindtap="toCollect">
+    <image src="{{ isCollect ? '../../assets/iscollect.png' : '../../assets/collect.png' }}"></image>
+    <text>收 藏</text>
+  </view>
+  <view class="action_btn">
+    <button class="btn_left" bindtap="addShoppingCar">加入购物车</button>
+    <button class="btn_right" bindtap="BuyNow">立即购买</button>
+  </view>
+</view>

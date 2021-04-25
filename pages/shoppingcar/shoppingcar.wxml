@@ -1,0 +1,76 @@
+<!--pages/shoppingcar/shoppingcar.wxml-->
+<view class="revice_address_row">
+  <view class="address_btn" wx:if="{{ address.length == 0 }}">
+    <button bindtap="handleChooseAddress" type="primary" plain>新增收货地址</button>
+  </view>
+
+  <!-- 当收货地址 存在 详细信息就显示 -->
+  <view wx:else class="user_info_row" bindtap="chooseAddress">
+    <view class="title">
+      <text>收货人</text>
+      <text>收货地址</text>
+    </view>
+    <view class="user_infos">
+      <text>{{ address[index].name }} {{ address[index].phone }}</text>
+      <text>{{ address[index].region }} {{address[index].infos }}</text>
+    </view>
+    <image src="/assets/arrow_right.png"></image>
+  </view>
+  <view class="divLine">
+    <!-- 分割线 -->
+  </view>
+</view>
+
+<!-- 购物车 -->
+<view class="cart_content">
+  <view class="cart_title">购物车</view>
+
+  <view class="cart_main">
+    <block wx:if="{{ cart.length > 0}}">
+      <block wx:for="{{ cart }}">
+        <view class="goods">
+          <!-- 左侧图片+复选框 -->
+<!--           <view class="cart_chk_wrap">
+            <checkbox-group bindtap="handleItemChange" data-id="{{item.goods_id}}">
+              <checkbox checked="{{item.checked}}"></checkbox>
+            </checkbox-group>
+          </view> -->
+          <view>
+            <image src="http://192.168.31.140:8080/images/{{ item.cover }}" class="good_img"></image>
+          </view>
+          <!-- 右侧部分 -->
+          <view class="good_infos">
+            <view class="good_name">
+              <text>{{ item.name }}</text>
+            </view>
+
+            <!-- 价格和购物加减的父盒子 -->
+            <view class="good_price">
+              <text class="price">￥{{ item.price }}</text>
+              <view class="btn_box">
+                <view class="btn">
+                  <button id="del{{ index }}" type="defalut" size="mini" bindtap="delCount">-</button>
+                  <input value="{{ item.count }}"></input>
+                  <button id="add{{ index }}" type="default" size="mini" bindtap="addCount">+</button>
+                </view>
+                <!-- 删除 -->
+                <image id="del{{ index }}" src="../../assets/delete.png" bindtap="delGoods" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- footer -->
+      <view class="total">
+        <view class="total_text">合计：<text>￥{{total}}</text></view>
+        <button class="total_js" size="mini" bindtap="goPay">去结算({{count}})</button>
+      </view>
+    </block>
+
+    <block wx:else>
+      <image src="../../assets/empty.gif" mode="widthFix"></image>
+      <text>购物车什么都没有，快去买点东西吧！</text>
+    </block>
+  </view>
+</view>

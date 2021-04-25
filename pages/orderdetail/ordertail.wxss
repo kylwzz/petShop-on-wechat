@@ -1,0 +1,139 @@
+/* pages/orderdetail/ordertail.wxss */
+.address{
+  display: flex;
+  width: 100%;
+  background-color: lightgoldenrodyellow;
+  height: 150rpx;
+  align-items: center;
+  justify-content: center;
+}
+.address .title{
+  display: flex;
+  flex-direction: column;
+  flex: 2/5;
+  padding: 20rpx;
+}
+.address .user_infos{
+  display: flex;
+  flex-direction: column;
+  flex: 3/5;
+  padding: 20rpx;
+}
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+ }
+ .shop{
+  display: flex;
+  height: 200rpx;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+/*    margin-left: 10rpx;
+  margin-right: 20rpx; */
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  background-color: white;
+  align-items: center;
+}
+.shop image{
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+}
+.shop .infos{
+ margin-left: 15rpx;
+ display: flex;
+ flex-direction: column;
+}
+.shop .infos .name{
+ font-weight: 600;
+ font-size: 15px;
+ margin-bottom: 30rpx;
+}
+.shop .infos .price{
+ color: red;
+ font-weight: 400;
+ font-size: 11pt;
+}
+.shop .infos .refund{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  border: 1rpx gray solid;
+  width: 80rpx;
+  font-size: 1pc;
+  font-weight: 600;
+  border-bottom-left-radius: 50rpx;
+  border-top-left-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+}
+.poster{
+  display: flex;
+  width: 100%;
+  background-color: white;
+  height: 150rpx;
+  align-items: center;
+  padding-left: 10rpx;
+  margin-bottom: 5rpx;
+ }
+ .poster .title{
+  display: flex;
+  flex-direction: column;
+  flex: 2/5;
+  padding: 20rpx;
+  color: gray;
+ }
+ .poster .poster_infos{
+  display: flex;
+  flex-direction: column;
+  flex: 3/5;
+  padding: 20rpx;
+ }
+ .transport{
+  display: flex;
+  background-color: white;
+  padding: 20rpx;
+  padding-left: 30rpx;
+  height: auto;
+}
+.transport .title{
+  color: gray;
+}
+.transport .choice{
+  padding-left: 20rpx;
+}
+.orderInfos{
+  margin-top: 5rpx;
+  display: flex;
+  background-color: white;
+  padding: 20rpx;
+  padding-left: 30rpx;
+  height: auto;
+}
+.orderInfos .title{
+  color: gray;
+  display: flex;
+  flex-direction: column;
+}
+.orderInfos .infos{
+  display: flex;
+  flex-direction: column;
+}
+.orderInfos .number{
+  padding-left: 30rpx;
+}
+.footer{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+}
+.footer .btn{
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: #e44178;
+  color: white;
+  border-radius: 98rpx; 
+}

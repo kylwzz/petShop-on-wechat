@@ -1,0 +1,97 @@
+<!--pages/user/orderList/orderList.wxml-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!-- 待付款 -->
+<view hidden="{{currentTab!==0}}" wx:key="index" class="state_0">
+
+  <view bindtap="toOrderDetail" bindlongpress="deleteOrderNow" class="item" wx:for="{{ order }}" data-index="{{index}}" wx:key="index">
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+    <view class="infos">
+        <text class="name">{{ item.name }}</text>
+        <text class="price">￥{{ item.price }}(含运费{{ item.transportPrice }}元)</text>
+        <text class="state">待支付 {{item.countdown}}</text>
+    </view>
+    <button hidden="{{ item.close }}" type="primary" class="btn_buy" catchtap="goPay" data-index="{{index}}">支付</button>
+  </view>
+
+  <view class="end"><text>没有更多了</text></view>
+</view>
+
+<!-- 待发货 -->
+<view hidden="{{currentTab!==1}}" wx:key="index" class="state_1">
+
+  <view bindtap="toOrderDetail" class="item" wx:for="{{ order }}" data-index="{{index}}" wx:key="index">
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+    <view class="infos">
+        <text class="name">{{ item.name }}</text>
+        <text class="price">￥{{ item.price }}(含运费{{ item.transportPrice }}元)</text>
+        <text class="state">待卖家发货</text>
+    </view>
+  </view>
+
+  <view class="end"><text>没有更多了</text></view>
+</view>
+
+<!-- 已发货 -->
+<view hidden="{{currentTab!==2}}" wx:key="index" class="state_2">
+
+  <view bindtap="toOrderDetail" class="item" wx:for="{{ order }}" data-index="{{index}}" wx:key="index">
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+    <view class="infos">
+        <text class="name">{{ item.name }}</text>
+        <text class="price">￥{{ item.price }}(含运费{{ item.transportPrice }}元)</text>
+        <text class="state">等待确认收货</text>
+    </view>
+    <button type="primary" class="btn_Accept" catchtap="goAccept" data-index="{{index}}">确认收货</button>
+  </view>
+
+  <view class="end"><text>没有更多了</text></view>
+</view>
+
+<!-- 待评价 -->
+<view hidden="{{currentTab!==3}}" wx:key="index" class="state_3">
+
+  <view bindtap="toOrderDetail" class="item" wx:for="{{ order }}" data-index="{{index}}" wx:key="index">
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+    <view class="infos">
+        <text class="name">{{ item.name }}</text>
+        <text class="price">￥{{ item.price }}(含运费{{ item.transportPrice }}元)</text>
+        <text class="state">已收货</text>
+    </view>
+    <button type="primary" class="btn_Comment" catchtap="goComment" data-index="{{index}}">前往评论</button>
+  </view>
+
+  <view class="end"><text>没有更多了</text></view>
+</view>
+
+<!-- 退款 -->
+<view hidden="{{currentTab!==4}}" wx:key="index" class="state_4">
+
+  <view bindtap="toOrderDetail" class="item" wx:for="{{ order }}" data-index="{{index}}" wx:key="index">
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+    <view class="infos">
+        <text class="name">{{ item.name }}</text>
+        <text class="price">￥{{ item.price }}(含运费{{ item.transportPrice }}元)</text>
+        <text class="state">退款申请中</text>
+    </view>
+  </view>
+
+  <view class="end"><text>没有更多了</text></view>
+</view>
+
+<!-- 已完成 -->
+<view hidden="{{currentTab!==5}}" wx:key="index" class="state_5">
+
+  <view bindtap="toOrderDetail" class="item" wx:for="{{ order }}" data-index="{{index}}" wx:key="index">
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+    <view class="infos">
+        <text class="name">{{ item.name }}</text>
+        <text class="price">￥{{ item.price }}(含运费{{ item.transportPrice }}元)</text>
+        <text class="state">已收货</text>
+    </view>
+  </view>
+
+  <view class="end"><text>没有更多了</text></view>
+</view>

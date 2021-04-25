@@ -1,0 +1,64 @@
+<swiper class="sliders">
+  <swiper-item>
+    <image mode="aspectFill" src="../../assets/link-01.png"></image>
+  </swiper-item>
+  <swiper-item>
+    <image mode="aspectFill" src="../../assets/link-02.png"></image>
+  </swiper-item>
+</swiper>
+
+<view class="entrance">
+  <navigator class="item" url="/pages/supplyList/supplyList?classify=宠粮">
+    <image src="../../assets/mall_food.png"></image>
+    <text>主粮</text>
+  </navigator>
+  <navigator class="item" url="/pages/supplyList/supplyList?classify=零食">
+    <image src="../../assets/mall_snack.png"></image>
+    <text>零食</text>
+  </navigator>
+  <navigator class="item" url="/pages/supplyList/supplyList?classify=玩具用品">
+    <image src="../../assets/mall_toy.png"></image>
+    <text>用品</text>
+  </navigator>
+</view>
+
+<view class="mall_food">
+  <view class="title">
+    <text>主粮</text>
+    <image src="../../assets/arrow_right.png"></image>
+  </view>
+
+  <view class="grids">
+    <navigator wx:for="{{ mainfood }}" wx:key="index" class="item" url="/pages/mallmessage/mallmessage?id={{ item.id }}">
+      <image src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="intro">
+      <view class="name"><text>{{ item.supplyName }}</text></view>
+      <view class="infos"><text>{{ item.infos }}</text></view>
+      <view class="price">
+        <text>￥{{ item.price }}</text>
+      </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<view class="mall_snack">
+  <view class="title">
+    <text>零食</text>
+    <image src="../../assets/arrow_right.png"></image>
+  </view>
+
+  <view class="grids">
+    <navigator class="item" wx:for="{{ snacks }}" wx:key="index" class="item" url="/pages/mallmessage/mallmessage?id={{ item.id }}">
+      <image src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="intro">
+      <view class="name"><text>{{ item.supplyName }}</text></view>
+      <view class="infos"><text>{{ item.infos }}</text></view>
+      <view class="price">
+        <text>￥{{ item.price }}</text>
+      </view>
+    </view>
+  </navigator>
+
+  </view>
+</view>

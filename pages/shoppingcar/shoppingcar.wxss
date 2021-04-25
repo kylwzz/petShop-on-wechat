@@ -1,0 +1,131 @@
+/* pages/shoppingcar/shoppingcar.wxss */
+.revice_address_row{
+  width: 100%;
+  background-color: lightgoldenrodyellow;
+}
+.user_info_row{
+  display: flex;
+  width: 100%;
+  background-color: lightgoldenrodyellow;
+  height: 150rpx;
+  align-items: center;
+  justify-content: center;
+}
+.user_info_row image{
+  width: 52rpx;
+  height: 58rpx;
+}
+.user_info_row .title{
+  display: flex;
+  flex-direction: column;
+  flex: 2/5;
+  padding: 20rpx;
+}
+.user_info_row .user_infos{
+  display: flex;
+  flex-direction: column;
+  flex: 3/5;
+  padding: 20rpx;
+}
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+ }
+.cart_content{
+  display: flex;
+  flex-direction: column;
+}
+.cart_content .cart_title{
+  padding: 20rpx;
+  color: #e44178;
+  font-size: 36rpx;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+.goods {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px 10px 0 10px;
+  display: flex;
+}
+.goods .cart_chk_wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goods image {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+}
+.goods .good_infos {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: #555;
+  font-size: 14px;
+  padding: 5px;
+  height: 100px;
+}
+.goods .good_infos .goods_name {
+  display: flex;
+  flex: 2;
+}
+.goods .good_infos .good_price {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+.goods .good_infos .good_price .price {
+  font-size: 16px;
+  color: #ec5151;
+}
+.goods .good_infos .good_price .btn_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.goods .good_infos .good_price .btn_box image {
+  width: 23px;
+  height: 23px;
+  border: 0;
+  margin: 0;
+}
+.goods .good_infos .good_price .btn {
+  display: flex;
+  flex-direction: row;
+}
+.goods .good_infos .good_price .btn input {
+  margin: 0;
+  width: 40px;
+  text-align: center;
+  border: 1px solid #eee;
+  font-size: 16px;
+  height: 28px;
+}
+.goods .good_infos .good_price .btn button {
+  margin: 0;
+}
+.total {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.total .total_text {
+  display: flex;
+  color: #777;
+}
+.total .total_text text {
+  color: #ec5151;
+}
+.total .total_js {
+  color: #fff;
+  background: #ec5151;
+  height: 30px;
+  margin: 0;
+}

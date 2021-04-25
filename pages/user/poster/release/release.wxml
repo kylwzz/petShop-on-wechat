@@ -1,0 +1,108 @@
+<!--pages/user/poster/release/release.wxml-->
+<form bindsubmit="formSubmit">
+  <!-- 商品名称 -->
+  <view class="title">
+    <view class="title_text">
+      <text>宠物名称：</text>
+      <input name="petName" type="text" value="{{title}}"></input>
+    </view>
+  </view>
+  <!-- 商品价格 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>商品价格：</text>
+      <input name="price" type='number' value='{{price}}'></input>
+    </view>
+  </view>
+  <!-- 宠物生日 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>宠物生日：</text>
+      <picker name="birth" mode="date" value='{{nowdate}}' start="2011-01-01" end="{{enddate}}" bindchange="dateChangeHandler">
+        <view class="picker">
+          {{nowdate}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 宠物性别 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>宠物性别：</text>
+      <picker name="sex" bindchange="sexChangeHandler" value="{{sexIndex}}" range="{{sexArray}}">
+        <view>
+          {{sexArray[sexIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 绝育情况 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>绝育情况：</text>
+      <picker name="sterilization" bindchange="isSterilizationChangeHandler" value="{{isSterilizationIndex}}" range="{{isSterilization}}">
+        <view>
+          {{isSterilization[isSterilizationIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+<!--   宠物简介 -->
+  <view class='info-point'>
+    <view class='title_text'>
+      <text>宠物简介：</text>
+      <textarea name="info" class='textarea' value='{{info}}'></textarea>
+    </view>
+  </view>
+  <!-- 发布地 -->
+  <view class="title">
+    <view class="title_text">
+      <text>发布地：</text>
+      <input name="area" type="text" value="{{area}}" disabled="disabled" placeholder="省市区县、乡镇等" bindtap="selectArea"></input>
+    </view>
+  </view>
+  <!-- 上传图片 -->
+  <view class="upImv">
+    <view class="upImv_text">图片上传</view>
+    <view class="addImv">
+      <!-- 已选的图片 -->
+      <view wx:for="{{banner}}" wx:key="key" class="upFile" bindtap="showImageBanner" style="border-radius: 5px" data-id="{{index}}">
+        <image class="itemImv" src="{{item}}"></image>
+        <image class="closeImv" src="../../../../assets/delete.png" mode="scaleToFill" catchtap="deleteImvBanner" data-id="{{index}}"></image>
+      </view>
+
+      <!-- 上传图片 -->
+      <view class="chooseView" bindtap="chooseBanner" style="border-radius: 5px" wx:if="{{chooseViewShowBanner}}">
+        <image class="chooseImv" src="../../../../assets/add.png"></image>
+      </view>
+
+    </view>
+  </view>
+
+  <button form-type="submit" class="sureRelease">确认发布</button>
+</form>
+
+<view class="pickerArea" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view class="pickerArea-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+    <!-- 确认取消按钮 -->
+    <view class='gangedBtn'>
+      <text class="city-cancel" catchtap="cityCancel">取消</text>
+      <text style="float: right" catchtap="citySure">确定</text>
+    </view>
+    <!-- 选择地址 -->
+    <picker-view class='cont' bindchange="cityChange" value="{{value}}" wx:key="">
+      <!-- 省 -->
+      <picker-view-column>
+        <view wx:for="{{provinces}}" class="picker-item" wx:key="index">{{item.name}}</view>
+      </picker-view-column>
+      <!-- 市 -->
+      <picker-view-column>
+        <view wx:for="{{citys}}" class="picker-item" wx:key="index">{{item.name}}</view>
+      </picker-view-column>
+      <!-- 区 -->
+      <picker-view-column>
+        <view wx:for="{{areas}}" class="picker-item" wx:key="index">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

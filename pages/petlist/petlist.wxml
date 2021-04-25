@@ -1,0 +1,69 @@
+<!--pages/catlist/catlist.wxml-->
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<!--猫猫-->
+<view hidden="{{currentTab!==0}}" class="cat" wx:key="index">
+  <view class="choice">
+    <selectPirce class="choicePrice" prop-array='{{selectPriceArray}}' bind:myget='catgetPrice'></selectPirce>
+    <selectSex class="choiceSex" prop-array='{{selectSexArray}}' bind:myget='catgetSex'></selectSex>
+  </view>
+
+  <view class="grids">
+    <navigator url="/pages/message/message?id={{ item.id }}" class="item" wx:for="{{ cats }}" wx:key="index">
+      <image  mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+      <view class="name"><text>{{ item.petName }}</text></view>
+      <view class="details">
+        <text class="price">￥{{ item.price }}</text>
+        <text class="area">{{ item.area }}</text>
+      </view>
+      </view>
+    </navigator>
+  </view>
+  
+</view>
+ 
+<!--狗狗-->
+<view hidden="{{currentTab!==1}}" class="dog">
+  <view class="choice">
+    <selectPirce prop-array='{{selectPriceArray}}' bind:myget='doggetPrice'></selectPirce>
+    <selectSex prop-array='{{selectSexArray}}' bind:myget='doggetSex'></selectSex>
+  </view>
+
+  <view class="grids">
+    <navigator url="/pages/message/message?id={{ item.id }}" class="item" wx:for="{{ dogs }}" wx:key="index">
+      <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+      <view class="name"><text>{{ item.petName }}</text></view>
+      <view class="details">
+        <text class="price">￥{{ item.price }}</text>
+        <text class="area">{{ item.area }}</text>
+      </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<!-- 小宠 -->
+<view hidden="{{currentTab!==2}}" class="small">
+  <view class="choice">
+    <selectPirce prop-array='{{selectPriceArray}}' bind:myget='smallgetPrice'></selectPirce>
+    <selectSex prop-array='{{selectSexArray}}' bind:myget='smallgetSex'></selectSex>
+  </view>
+
+  <view class="grids">
+    <navigator url="/pages/message/message?id={{ item.id }}" class="item" wx:for="{{ smalls }}" wx:key="index">
+      <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+      <view class="name"><text>{{ item.petName }}</text></view>
+      <view class="details">
+        <text class="price">￥{{ item.price }}</text>
+        <text class="area">{{ item.area }}</text>
+      </view>
+      </view>
+    </navigator>
+  </view>
+</view>

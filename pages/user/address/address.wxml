@@ -1,0 +1,21 @@
+<!--pages/user/address/ad.wxml-->
+<scroll-view class="scroll" scroll-y="true">
+
+  <view wx:for="{{ addressList }}" class="item" deta-set='{{ index }}'>
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap"  data-id='{{item.id}}'>
+      <view class="all">
+        <view class="ui-first">
+          <view class="name">{{ item.name }}</view>
+          <view class="phone">{{ item.phone }}</view>
+        </view>
+        <view class="ui-second">
+          <view class="region">{{ item.region }}</view>
+          <view class="infos">{{ item.infos}}</view>
+        </view>
+      </view>
+    </mp-slideview>
+  </view>
+</scroll-view>
+<navigator url="/pages/user/address/addAddress/addAddress" class="add-address" >
+<image class="add-img"  src="../../../assets/plus.png"></image>新增地址
+</navigator>

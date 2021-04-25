@@ -1,0 +1,55 @@
+<!--pages/orderFromCart/orderFromCart.wxml-->
+<view class="revice_address_row">
+  <!-- 当收货地址 存在 详细信息就显示 -->
+  <view class="user_info_row" bindtap="chooseAddress">
+    <view class="title">
+      <text>收货人</text>
+      <text>收货地址</text>
+    </view>
+    <view class="user_infos">
+      <text>{{ address.name }} {{ address.phone }}</text>
+      <text>{{ address.region }} {{address.infos }}</text>
+    </view>
+  </view>
+
+  <view class="divLine">
+    <!-- 分割线 -->
+  </view>
+</view>
+
+<view class="shop" wx:for="{{ cart }}" deta-set='{{ index }}'>
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+    <view class="infos">
+      <text class="name">{{ item.name }}</text>
+      <text class="price">￥{{ item.price }}</text>
+    </view>
+
+    <view class="good_price">
+      <view class="btn_box">
+        <view class="btn">
+          <button id="{{ index }}" type="defalut" size="mini" bindtap="delCount">-</button>
+          <input value="{{ item.count }}"></input>
+          <button id="{{ index }}" type="default" size="mini" bindtap="addCount">+</button>
+        </view>
+      </view>
+    </view>
+</view>
+
+<view class="transportSupply">
+  <view class="title"><text>物流配送</text></view>
+  <view class="way">按具体商品</view>
+</view>
+
+<view class="footer">
+  <view class="total">
+    <view>
+      <text>合计</text><text class="price">{{ total }}元</text>
+    </view>
+    <view>
+      <text>运费</text><text class="price">{{transportPrice}}元</text>
+    </view>
+  </view>
+  <view class="action_btn">
+    <button class="btn" bindtap="Pay">马上支付</button>
+  </view>
+</view>

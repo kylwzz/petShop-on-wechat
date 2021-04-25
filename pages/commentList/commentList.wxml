@@ -1,0 +1,15 @@
+<!--pages/commentList/commentList.wxml-->
+<view class="content">
+  <view class="item" wx:for="{{ comment }}">
+    <image class="icon" src="{{ item.avatarUrl }}"></image>
+    <view class="infos">
+      <view class="name"><text>{{ item.nickName}}</text></view>
+      <view class="contents"><text>{{ item.comment }}</text></view>
+      <view class="heartScore">
+        <view class="test" wx:for="{{ item.heartScore }}">
+          <image src="/assets/heart_full.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,302 @@
+/* pages/user/orderList/orderList.wxss */
+.navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+.navbar .item.active{
+  color: #EE523D;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #EE523D;
+}
+
+.state_0{
+  display: flex;
+  flex-direction: column;
+}
+.state_0 .item{
+  border: 1rpx gray solid;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  display: flex;
+  background-color: white;
+}
+.state_0 .item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.state_0 .item .infos{
+  margin-left: 8rpx;
+  display: flex;
+  flex-direction: column;
+}
+.state_0 .item .infos .name{
+  font-weight: 600;
+  font-size: 15px;
+}
+.state_0 .item .infos .price{
+  color: red;
+  font-weight: 400;
+  font-size: 11pt;
+}
+.state_0 .item .infos .state{
+  margin-top: 15rpx;
+  font-size: small;
+  color: gray;
+  font-weight: 500;
+}
+.state_0 .item .btn_buy{
+  width: 200rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-top: 50rpx;
+  background-color: #e44178;
+}
+
+.state_1{
+  display: flex;
+  flex-direction: column;
+}
+.state_1 .item{
+  border: 1rpx gray solid;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  display: flex;
+  background-color: white;
+}
+.state_1 .item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.state_1 .item .infos{
+  margin-left: 8rpx;
+  display: flex;
+  flex-direction: column;
+}
+.state_1 .item .infos .name{
+  overflow:hidden;
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+  font-weight: 600;
+  font-size: 15px;
+}
+.state_1 .item .infos .price{
+  color: red;
+  font-weight: 400;
+  font-size: 11pt;
+}
+.state_1 .item .infos .state{
+  margin-top: 15rpx;
+  font-size: small;
+  color: gray;
+  font-weight: 500;
+}
+
+.state_2{
+  display: flex;
+  flex-direction: column;
+}
+.state_2 .item{
+  border: 1rpx gray solid;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  display: flex;
+  background-color: white;
+}
+.state_2 .item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.state_2 .item .infos{
+  margin-left: 8rpx;
+  display: flex;
+  flex-direction: column;
+}
+.state_2 .item .infos .name{
+  font-weight: 600;
+  font-size: 15px;
+}
+.state_2 .item .infos .price{
+  color: red;
+  font-weight: 400;
+  font-size: 11pt;
+}
+.state_2 .item .infos .state{
+  margin-top: 15rpx;
+  font-size: small;
+  color: gray;
+  font-weight: 500;
+}
+.state_2 .item .btn_Accept{
+  width: 200rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-top: 50rpx;
+  background-color: #e44178;
+  font-size: small;
+}
+
+.state_3{
+  display: flex;
+  flex-direction: column;
+}
+.state_3 .item{
+  border: 1rpx gray solid;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  display: flex;
+  background-color: white;
+}
+.state_3 .item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.state_3 .item .infos{
+  margin-left: 8rpx;
+  display: flex;
+  flex-direction: column;
+}
+.state_3 .item .infos .name{
+  font-weight: 600;
+  font-size: 15px;
+}
+.state_3 .item .infos .price{
+  color: red;
+  font-weight: 400;
+  font-size: 11pt;
+}
+.state_3 .item .infos .state{
+  margin-top: 15rpx;
+  font-size: small;
+  color: gray;
+  font-weight: 500;
+}
+.state_3 .item .btn_Comment{
+  width: 200rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-top: 50rpx;
+  background-color: #e44178;
+  font-size: small;
+}
+
+.state_4{
+  display: flex;
+  flex-direction: column;
+}
+.state_4 .item{
+  border: 1rpx gray solid;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  display: flex;
+  background-color: white;
+}
+.state_4 .item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.state_4 .item .infos{
+  margin-left: 8rpx;
+  display: flex;
+  flex-direction: column;
+}
+.state_4 .item .infos .name{
+  font-weight: 600;
+  font-size: 15px;
+}
+.state_4 .item .infos .price{
+  color: red;
+  font-weight: 400;
+  font-size: 11pt;
+}
+.state_4 .item .infos .state{
+  margin-top: 15rpx;
+  font-size: small;
+  color: gray;
+  font-weight: 500;
+}
+.state_4 .item .btn_Comment{
+  width: 200rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-top: 50rpx;
+  background-color: #e44178;
+  font-size: small;
+}
+
+.state_5{
+  display: flex;
+  flex-direction: column;
+}
+.state_5 .item{
+  border: 1rpx gray solid;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  display: flex;
+  background-color: white;
+}
+.state_5 .item image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.state_5 .item .infos{
+  margin-left: 8rpx;
+  display: flex;
+  flex-direction: column;
+}
+.state_5 .item .infos .name{
+  font-weight: 600;
+  font-size: 15px;
+}
+.state_5 .item .infos .price{
+  color: red;
+  font-weight: 400;
+  font-size: 11pt;
+}
+.state_5 .item .infos .state{
+  margin-top: 15rpx;
+  font-size: small;
+  color: gray;
+  font-weight: 500;
+}
+
+.end{
+  color: gray;
+  align-items: center;
+  text-align: center;
+  font-size: small;
+}

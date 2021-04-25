@@ -1,0 +1,69 @@
+/* pages/user/address/ad.wxss */
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;
+}  
+
+.item{
+  margin-top: 10rpx;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.all{
+  height: 150rpx;
+}
+
+.item .ui-first{
+  display: flex;
+  padding-top: 30rpx;
+}
+.item .ui-first .name{
+  margin-left: 50rpx;
+  font-weight: 700;
+  font-size: large;
+}
+.item .ui-first .phone{
+  margin-left: 50rpx;
+  font-weight: 700;
+  font-size: large;
+}
+
+.item .ui-second{
+  display: flex;
+}
+
+.item .ui-second .region{
+  margin-left: 50rpx;
+  white-space: nowrap;
+}
+
+.item .ui-second .infos{
+  margin-left: 20rpx;
+  margin-right: 50rpx;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.add-address{
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 150px;
+  height: 35px;
+  border: 1px #000 solid;
+  line-height: 35px;
+  text-align: center;
+  background-color: #e44178;
+  color: white;
+  border-radius: 5rpx;
+  display: block;
+}
+
+.add-img{
+  margin-right: 5rpx;
+  width: 15px;
+  height: 15px;
+}

@@ -1,0 +1,41 @@
+<!--pages/user/poster/mypost/mypost.wxml-->
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!-- 宠物 -->
+<view hidden="{{currentTab!==0}}" class="pet" wx:key="index">
+
+  <view class="grids">
+    <navigator url="/pages/message/message?id={{ item.id }}" class="item" wx:for="{{ pets }}" wx:key="index">
+      <image  mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+      <view class="name"><text>{{ item.petName }}</text></view>
+      <view class="details">
+        <text class="price">￥{{ item.price }}</text>
+        <text class="area">发布地</text>
+      </view>
+      </view>
+    </navigator>
+  </view>
+
+</view>
+
+<!-- 商品 -->
+<view hidden="{{currentTab!==1}}" class="supply">
+
+  <view class="grids">
+    <navigator url="/pages/message/message?id={{ item.id }}" class="item" wx:for="{{ supplies }}" wx:key="index">
+      <image  mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+      <view class="name"><text>{{ item.supplyName }}</text></view>
+      <view class="details">
+        <text class="price">￥{{ item.price }}</text>
+        <text class="area">发布地</text>
+      </view>
+      </view>
+    </navigator>
+  </view>
+
+</view>

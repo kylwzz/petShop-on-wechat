@@ -1,0 +1,52 @@
+<!--pages/user/poster/poster.wxml-->
+
+<block wx:if="{{ state == 0}}">
+  <view class="request">
+    <button type="primary" bindtap="requestUser">申请成为商家</button>
+  </view>
+</block>
+
+<block wx:if="{{ state == 1}}">
+  <view class="holding">
+    <text>请等待管理员审核</text>
+  </view>
+</block>
+
+<block wx:if="{{ state == 2}}">
+  <view class="userInfos">
+  <view class="user_Icon">
+    <open-data type="userAvatarUrl" class="headIcon"></open-data>
+  </view>
+  <view class="user_NickName">
+    <open-data type="userNickName"></open-data>
+  </view>
+</view>
+
+<view class="choice">
+  <navigator url="/pages/user/poster/release/release?type=猫" class="item">
+    <text>发布猫猫</text>
+    <image mode="aspectFill" src="../../../assets/arrow_right.png"></image>
+  </navigator>
+  <navigator url="/pages/user/poster/release/release?type=狗" class="item">
+    <text>发布狗狗</text>
+    <image mode="aspectFill" src="../../../assets/arrow_right.png"></image>
+  </navigator>
+  <navigator url="/pages/user/poster/release/release?type=小宠" class="item">
+    <text>发布小宠</text>
+    <image mode="aspectFill" src="../../../assets/arrow_right.png"></image>
+  </navigator>
+  <navigator url="/pages/user/poster/releasesupplies/releasesupplies" class="item">
+    <text>发布宠物用品</text>
+    <image mode="aspectFill" src="../../../assets/arrow_right.png"></image>
+  </navigator>
+  <navigator url="/pages/user/poster/mypost/mypost" class="item">
+    <text>我的发布</text>
+    <image mode="aspectFill" src="../../../assets/arrow_right.png"></image>
+  </navigator>
+  <navigator url="/pages/user/poster/orderHandler/orderHandler" class="item">
+    <text>订单处理</text>
+    <image mode="aspectFill" src="../../../assets/arrow_right.png"></image>
+  </navigator>
+</view>
+</block>
+

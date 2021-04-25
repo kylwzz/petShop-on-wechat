@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "selectPirce": "/Componet/SelectPrice/selectPrice",
+    "selectSex": "/Componet/SelectSex/selectSex"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 20
+}

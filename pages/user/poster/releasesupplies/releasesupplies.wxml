@@ -1,0 +1,136 @@
+<!--pages/user/poster/releasesupplies/releasesupplies.wxml-->
+<form bindsubmit="formSubmit">
+  <!-- 商品名称 -->
+  <view class="title">
+    <view class="title_text">
+      <text>商品名称：</text>
+      <input name="supplyName" type="text" value="{{title}}"></input>
+    </view>
+  </view>
+  <!-- 商品简介 -->
+  <view class='info-point'>
+    <view class='title_text'>
+      <text>商品简介：</text>
+      <textarea name="info" class='textarea' value='{{info}}'></textarea>
+    </view>
+  </view>
+  <!-- 商品价格 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>商品价格：</text>
+      <input name="price" type='number' value='{{price}}'></input>
+    </view>
+  </view>
+  <!-- 配送方式 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>配送方式：</text>
+      <picker name="transport" bindchange="transportHandler" value="{{transportIndex}}" range="{{transportArray}}">
+        <view>
+          {{transportArray[transportIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 用品分类 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>用品分类：</text>
+      <picker name="classify" bindchange="classifyHandler" value="{{classifyIndex}}" range="{{classifyArray}}">
+        <view>
+          {{classifyArray[classifyIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 商品品牌 -->
+  <view class="title">
+    <view class="title_text">
+      <text>商品品牌：</text>
+      <input name="brand" type="text" value="{{brand}}"></input>
+    </view>
+  </view>
+  <!-- 宠粮阶段  选择了宠粮才可见 -->
+  <view class='title'>
+    <view class='title_text'>
+      <text>适用阶段：</text>
+      <picker name="stage" bindchange="stageHandler" value="{{stageIndex}}" range="{{stageArray}}">
+        <view>
+          {{stageArray[stageIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 品种 -->
+  <view class="title" wx:if="{{ isShow }}">
+    <view class="title_text">
+      <text>建议品种：</text>
+      <input name="advice" type="text" value="{{advice}}"></input>
+    </view>
+  </view>
+  <!-- 商品重量 -->
+  <view class="title">
+    <view class="title_text">
+      <text>商品重量：</text>
+      <input name="weight" type="text" value="{{weight}}"></input>
+    </view>
+  </view>
+  <!-- 商品保质 -->
+  <view class="title">
+    <view class="title_text">
+      <text>保质期：</text>
+      <input name="expiration" type="text" value="{{expiration}}"></input>
+    </view>
+  </view>
+    <!-- 发布地 -->
+  <view class="title">
+    <view class="title_text">
+      <text>发布地：</text>
+      <input name="area" type="text" value="{{area}}" disabled="disabled" placeholder="省市区县、乡镇等" bindtap="selectArea"></input>
+    </view>
+  </view>
+  <!-- 上传图片 -->
+  <view class="upImv">
+    <view class="upImv_text">图片上传</view>
+    <view class="addImv">
+      <!-- 已选的图片 -->
+      <view wx:for="{{banner}}" wx:key="key" class="upFile" bindtap="showImageBanner" style="border-radius: 5px" data-id="{{index}}">
+        <image class="itemImv" src="{{item}}"></image>
+        <image class="closeImv" src="../../../../assets/delete.png" mode="scaleToFill" catchtap="deleteImvBanner" data-id="{{index}}"></image>
+      </view>
+
+      <!-- 上传图片 -->
+      <view class="chooseView" bindtap="chooseBanner" style="border-radius: 5px" wx:if="{{chooseViewShowBanner}}">
+        <image class="chooseImv" src="../../../../assets/add.png"></image>
+      </view>
+
+    </view>
+  </view>
+
+  <button form-type="submit" class="sureRelease">确认发布</button>
+</form>
+
+<view class="pickerArea" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <view class="pickerArea-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+    <!-- 确认取消按钮 -->
+    <view class='gangedBtn'>
+      <text class="city-cancel" catchtap="cityCancel">取消</text>
+      <text style="float: right" catchtap="citySure">确定</text>
+    </view>
+    <!-- 选择地址 -->
+    <picker-view class='cont' bindchange="cityChange" value="{{value}}" wx:key="">
+      <!-- 省 -->
+      <picker-view-column>
+        <view wx:for="{{provinces}}" class="picker-item" wx:key="index">{{item.name}}</view>
+      </picker-view-column>
+      <!-- 市 -->
+      <picker-view-column>
+        <view wx:for="{{citys}}" class="picker-item" wx:key="index">{{item.name}}</view>
+      </picker-view-column>
+      <!-- 区 -->
+      <picker-view-column>
+        <view wx:for="{{areas}}" class="picker-item" wx:key="index">{{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

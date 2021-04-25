@@ -1,0 +1,46 @@
+/* pages/commentList/commentList.wxss */
+.content{
+  padding-bottom: 10rpx;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.content .item{
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+  height: 110rpx;
+}
+.content .item .icon{
+  border-radius: 50%;
+  overflow: hidden;
+  width:80rpx;
+  height: 80rpx;
+  margin-top: 5rpx;
+  margin-left: 20rpx;
+}
+.content .item .name{
+  margin-left: 20rpx;
+  font-weight: bold;
+}
+.content .item .contents{
+  margin-left: 20rpx;
+  font-weight: lighter;
+  color: gray;
+}
+.content .item .heartScore{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+}
+.content .item .heartScore .test{
+  display: flex;
+  flex-direction: row;
+  t: 20rpx;
+}
+.content .item .heartScore .test image{
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+}

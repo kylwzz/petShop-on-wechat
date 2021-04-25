@@ -1,0 +1,92 @@
+<!--pages/order/order.wxml-->
+<view class="revice_address_row">
+  <view class="address_btn" wx:if="{{ address.length == 0 }}">
+    <button bindtap="handleChooseAddress" type="primary" plain>新增收货地址</button>
+  </view>
+
+  <!-- 当收货地址 存在 详细信息就显示 -->
+  <view wx:else class="user_info_row" bindtap="chooseAddress">
+    <view class="title">
+      <text>收货人</text>
+      <text>收货地址</text>
+    </view>
+    <view class="user_infos">
+      <text>{{ address[index].name }} {{ address[index].phone }}</text>
+      <text>{{ address[index].region }} {{address[index].infos }}</text>
+    </view>
+    <image src="/assets/arrow_right.png"></image>
+  </view>
+
+  <view class="divLine">
+    <!-- 分割线 -->
+  </view>
+</view>
+
+  <view class="shop" hidden="{{ order.type !== 0}}">
+    <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ order.cover }}"></image>
+    <view class="infos">
+      <text class="name">{{ order.name }}</text>
+      <text class="price">￥{{ order.price }}</text>
+    </view>
+  </view>
+
+  <view class="shop" hidden="{{ order.type !== 1}}">
+    <image mode="aspectFill" src="http://192.168.31.140/images/{{ order.cover }}"></image>
+    <view class="infos">
+      <text class="name">{{ order.name }}</text>
+      <text class="price">￥{{ order.price }}</text>
+    </view>
+
+    <view class="good_price">
+      <view class="btn_box">
+        <view class="btn">
+          <button id="{{ index }}" type="defalut" size="mini" bindtap="delCount">-</button>
+          <input value="{{ order.amount }}"></input>
+          <button id="{{ index }}" type="default" size="mini" bindtap="addCount">+</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+<view class="poster">
+  <view class="title">
+    <text>卖家名称</text>
+    <text>卖家地址</text>
+  </view>
+
+  <view class="poster_infos">
+    <text>{{ poster.nickName }}</text>
+    <text>{{ order.posterAera }}</text>
+  </view>
+</view>
+
+<view class="transport" hidden="{{ order.type !== 0}}">
+  <view class="title"><text>配送方式</text></view>
+  <view class="choice">
+    <view class="item" wx:for="{{ transportArray }}" bindtap="changetransportArray" data-id="{{ item.id }}">
+      <icon type="success" color="{{ item.checked ? 'orange' : 'gray' }}"></icon>
+      <text>{{ item.text }}</text>
+    </view>
+  </view>
+</view>
+
+<view class="transportSupply" hidden="{{ order.type !== 1}}">
+  <view class="title"><text>物流配送</text></view>
+  <view class="way">{{ order.transport }}</view>
+</view>
+
+<view class="footer">
+  <view class="total">
+    <view>
+      <text>合计</text><text class="price">{{ order.price }}元</text>
+    </view>
+    <view>
+      <text>运费</text><text class="price">{{transportPrice}}元</text>
+    </view>
+  </view>
+  <view class="action_btn">
+    <button class="btn" bindtap="Pay">马上支付</button>
+  </view>
+</view>

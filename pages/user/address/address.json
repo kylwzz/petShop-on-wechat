@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-cells": "/Componet/cells/cells",
+    "mp-cell": "/Componet/cell/cell",
+    "mp-slideview": "/Componet/slideview/slideview"
+  }
+}

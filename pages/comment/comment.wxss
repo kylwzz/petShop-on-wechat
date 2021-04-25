@@ -1,0 +1,94 @@
+/* pages/comment/comment.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+.service {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background: #fff;
+}
+.score {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px solid #ccc;
+}
+.star {
+  float: left;
+  width: 54rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.star image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+.score .left {
+  width: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  float: left;
+}
+.score .right {
+  width: 610rpx;
+  font-size: 30rpx;
+  float: left;
+  color: #888;
+}
+
+.score .right .rtxt {
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 15rpx;
+  color: #e44178;
+  font-weight: bold;
+}
+
+.conts{
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+textarea {
+  width: 687rpx;
+}
+.areas{
+  height:315rpx;
+  font-size: 30rpx;
+  padding-top: 30rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.currentWordNumber{
+  font-size: 28rpx;
+  position: absolute;
+  left: 0%;
+  bottom: 0rpx;
+  color: #e44178;
+}
+.hint{
+   font-size: 28rpx;
+   position: absolute;
+   top: 120rpx;
+   left: 30rpx;
+   color: #FF6600;
+}
+.footer{
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+}
+.footer .btn{
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: #e44178;
+  color: white;
+  border-radius: 98rpx; 
+}

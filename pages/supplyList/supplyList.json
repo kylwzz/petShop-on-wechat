@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "selectClassify": "/Componet/SelectClassify/selectClassify",
+    "selectStage": "/Componet/SelectStage/selectStage"
+  },
+  "backgroundColor": "#FFFFFF",
+  "navigationBarTitleText": "商品列表"
+}

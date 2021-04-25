@@ -1,0 +1,18 @@
+<!--pages/supplyList/supplyList.wxml-->
+<view class="choice">
+  <selectClassify class="choiceClassify" prop-array='{{selectClassifyArray}}' bind:myget='getClassify'></selectClassify>
+  <selectStage class="choiceStage" prop-array='{{selectStageArray}}' bind:myget='getStage'></selectStage>
+</view>
+
+<view class="grids">
+    <navigator url="/pages/mallmessage/mallmessage?id={{ item.id }}" class="item" wx:for="{{ supplies }}" wx:key="index">
+      <image  mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+      <view class="infos">
+      <view class="name"><text>{{ item.supplyName }}</text></view>
+      <view class="details">
+        <text class="price">￥{{ item.price }}</text>
+        <text class="area">{{ item.area }}</text>
+      </view>
+      </view>
+    </navigator>
+  </view>

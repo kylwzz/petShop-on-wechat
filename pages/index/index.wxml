@@ -1,0 +1,104 @@
+<view wx:if="{{isHide}}">
+  <view wx:if="{{canIUse}}" class="login">
+    <view class="user_Icon">
+      <open-data type="userAvatarUrl" class="headIcon"></open-data>
+    </view>
+
+    <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' bindtap="bindGetUserInfo">
+      授权登录
+    </button>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+
+  <navigator url="/pages/search/search" class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <!--点击之后，出现input框 -->
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索"/>
+      </view>
+      <!--没点击之前，只是一些文字和图标 -->
+      <label class="weui-search-bar__label">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+  </navigator>
+
+  <swiper class="sliders">
+    <swiper-item>
+      <image mode="aspectFill" src="../../assets/link-01.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image mode="aspectFill" src="../../assets/link-02.png"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="entrance">
+    <navigator url="/pages/petlist/petlist" class="item">
+      <image src="../../assets/cat-icon.png"></image>
+      <text>猫猫</text>
+    </navigator>
+    <navigator url="/pages/petlist/petlist?idx=1" class="item">
+      <image src="../../assets/dog-icon.png"></image>
+      <text>狗狗</text>
+    </navigator>
+    <navigator url="/pages/petlist/petlist?idx=2" class="item">
+      <image src="../../assets/small_icon.png"></image>
+      <text>小宠</text>
+    </navigator>
+    <navigator class="item" url="/pages/supplyList/supplyList?classify=全部&stage=品种">
+      <image src="../../assets/shop-icon.png"></image>
+      <text>商城</text>
+    </navigator>
+  </view>
+
+  <view class="discount">
+    <view class="title">
+      <image src="../../assets/discount_icon.png" style="width: 50rpx; height: 50rpx"></image>
+      <text>每日特价</text>
+    </view>
+
+    <scroll-view scroll-x="true">
+      <view scroll-x="ture" class="grid">
+        <!-- 这里要循环 -->
+        <navigator wx:for="{{ pets }}" wx:key="index" class="item" url="/pages/message/message?id={{ item.id }}">
+          <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+          <view class="infos">
+            <text class="type">{{ item.petName }}</text>
+            <text class="price">￥{{ item.price }}</text>
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="newest">
+    <view class="title">
+      <image src="../../assets/newest_icon.png" style="width: 50rpx; height: 50rpx"></image>
+      <text>最新上架</text>
+    </view>
+
+    <scroll-view scroll-x="true">
+      <view class="grid">
+        <navigator class="item" wx:for="{{ newest }}" wx:key="index" class="item" url="/pages/message/message?id={{ item.id }}">
+          <image mode="aspectFill" src="http://192.168.31.140:8080/images/{{ item.cover }}"></image>
+          <view class="infos">
+            <text class="type">{{ item.petName }}</text>
+            <text class="price">￥{{ item.price }}</text>
+          </view>
+        </navigator>
+
+      </view>
+    </scroll-view>
+  </view>
+
+</view>
